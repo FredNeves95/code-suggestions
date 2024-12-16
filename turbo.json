@@ -5,7 +5,7 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": ["apps/frontend/dist/**", "apps/backend/dist/**"]
     },
     "lint": {
       "dependsOn": ["^lint"]
@@ -13,9 +13,26 @@
     "check-types": {
       "dependsOn": ["^check-types"]
     },
-    "dev": {
+    "frontend:build": {
+      "inputs": ["apps/frontend/**", ".env*"],
+      "outputs": ["apps/frontend/dist/**"]
+    },
+    "frontend:dev": {
       "cache": false,
       "persistent": true
+    },
+    "backend:build": {
+      "inputs": ["apps/backend/**", ".env*"],
+      "outputs": []
+    },
+    "backend:dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": ["frontend:dev", "backend:dev"]
     }
   }
 }
