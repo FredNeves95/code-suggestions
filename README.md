@@ -28,8 +28,8 @@ Ensure you have the following installed on your system:
 1. **Clone the repository:**
 
    ```bash
-   git clone <https://github.com/FredNeves95/code-suggestions.git>
-   cd <code-suggestions>
+   git clone https://github.com/FredNeves95/code-suggestions.git
+   cd code-suggestions
    ```
 
 2. **Install dependencies for the entire monorepo:**
@@ -57,7 +57,7 @@ Ensure you have the following installed on your system:
    Use a file decompression program to access the project. Examples of programs that can be used include WinRAR, 7-Zip, and The Unarchiver.
 
    ```bash
-   cd <code-suggestions>
+   cd code-suggestions
    ```
 
 2. **Install dependencies for the entire monorepo:**
