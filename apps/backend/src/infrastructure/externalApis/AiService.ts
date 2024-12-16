@@ -57,7 +57,6 @@ export class AIService {
     let parsedData: AIResponse;
 
     try {
-      jsonMatch.forEach((json, index) => console.log(index, ": ", json));
       parsedData = JSON.parse(jsonMatch[1].trim());
     } catch {
       throw new CodeAnalysisError(

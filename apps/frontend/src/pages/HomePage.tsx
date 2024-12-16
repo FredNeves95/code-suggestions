@@ -30,7 +30,6 @@ function HomePage() {
       if (!response) {
         throw new Error('Invalid response from server');
       }
-      console.log(codeAnalysis);
       setCodeAnalisys(response);
     } catch (error) {
       showError(getErrorMessage(error));
