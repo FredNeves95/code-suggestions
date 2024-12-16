@@ -24,7 +24,7 @@ app.post("/api/analyze-code", (req: Request, res: Response) => {
 });
 
 // Iniciar o servidor
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5001;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
