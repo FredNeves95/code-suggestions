@@ -3,7 +3,9 @@ import { ErrorProvider } from './state/ErrorContext';
 function App() {
   return (
     <ErrorProvider>
-      <HomePage />
+      <div className="h-screen">
+        <HomePage />
+      </div>
     </ErrorProvider>
   );
 }

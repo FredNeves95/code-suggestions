@@ -15,7 +15,7 @@ function CodePreview({ code, title }: CodePreviewProps) {
   const language = hljs.highlightAuto(code, preferredLanguages).language;
 
   return (
-    <div className="text-white p-4 overflow-auto bg-gray-700">
+    <div className="text-white p-4 overflow-auto bg-gray-700 w-full max-w-xl">
       <TertiaryTitle>
         {title} - {language}
       </TertiaryTitle>
