@@ -107,9 +107,11 @@ Note: For the version stored on GitHub, the backend application's .env file has 
 3. **Alternative to login -> Rate-limiting**
 
    - Implement a rate-limiting feature to prevent consecutive requests from the same IP address. This will restrict the number of requests an IP can make within a given time frame, helping to mitigate abuse and improve server stability, also, since the OpenAI charges per token, it could reduce costs.
-     - To implement rate limiting, a system can be set up to track the number of requests made by each IP address within a specified time window. This can be done by storing the timestamp of each request and comparing it with the current time. If the number of requests exceeds the allowed limit within that window, further requests are blocked.
-       A possible implementation could involve using a caching system like Redis to store request data. When a request is made, the system checks the number of requests from that IP in the last X minutes. If the limit is exceeded, the request is denied with a 429 Too Many Requests response. Otherwise, the request count is incremented.
+   - To implement rate limiting, a system can be set up to track the number of requests made by each IP address within a specified time window. This can be done by storing the timestamp of each request and comparing it with the current time. If the number of requests exceeds the allowed limit within that window, further requests are blocked.
+     A possible implementation could involve using a caching system like Redis to store request data. When a request is made, the system checks the number of requests from that IP in the last X minutes. If the limit is exceeded, the request is denied with a 429 Too Many Requests response. Otherwise, the request count is incremented.
 
 4. **Shared Utilities**
-
-- I created the two projects separately and then added them to the Turborepo, but I believe some files could be reused to avoid duplication, such as the TypeScript configurations..
+   - I created the two projects separately and then added them to the Turborepo, but I believe some files could be reused to avoid duplication, such as the TypeScript configurations..
+  
+5. **Errors**
+   - In the future, if the system were to be extended and new functionalities implemented, the way errors are returned from the backend could become repetitive, as I placed the return directly in the controller. I believe that, with system scalability in mind, a middleware could be used to centralize error handling according to their type.
